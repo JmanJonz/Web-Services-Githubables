@@ -1,7 +1,7 @@
 ### get all contacts
-GET https://contacts-y9h1.onrender.com/contacts
+GET https://contacts-y9h1.onrender.com/
 
 ### get contact by id
-GET https://contacts-y9h1.onrender.com/contacts/65037f4057d9bcbcfcab6ea3
+GET https://contacts-y9h1.onrender.com/65037f4057d9bcbcfcab6ea3
 
 
