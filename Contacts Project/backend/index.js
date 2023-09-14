@@ -27,6 +27,9 @@
     });
 
 // handle requests through imported routers
+    server.get("/", (req, res)=>{
+        res.send("Incomplete Path Add On To It You Dummy");
+    })
     import contactsRouter from "./routers/contactsRouter.js";
     server.use("/contacts", contactsRouter);
 
