@@ -12,19 +12,24 @@
             const port = process.env.PORT || 3000;
             server.listen(port, () => {
                 console.log(`Connected to DB & Serving at port ${port}`);
-            })
+            });
         }catch(error){
             console.error("Error connecting to MongoDB", error);
         }
     })();
 
-// middleware that logs every request
-    server.use((req, res, next) => {
-        console.log("Request method:", req.method);
-        console.log("Request URL:", req.url);
-        console.log("Request status code:", res.statusCode);
-        next();
-    });
+// middleware
+
+    // logs every request
+        server.use((req, res, next) => {
+            console.log("Request method:", req.method);
+            console.log("Request URL:", req.url);
+            console.log("Request status code:", res.statusCode);
+            next();
+        });
+
+    // parses req.body from json to js object
+        server.use(express.json());
 
 // handle requests through imported routers
     import contactsRouter from "./routers/contactsRouter.js";
