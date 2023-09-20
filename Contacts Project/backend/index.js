@@ -5,8 +5,8 @@
     import cors from "cors";
     import contactsRouter from "./routers/contactsRouter.js";
     import swaggerUI from "swagger-ui-express";
-    // doesn't work on render so only uncomment when updating documentation locally...
-        // import swaggerJson from "./swagger.json" assert {type: "json"}; 
+    // doesn't work on render so only uncomment when updating documentation locally & viewing documentation
+        import swaggerJson from "./swagger.json" assert {type: "json"}; 
 
 // configurations
     dotenv.config(); 
