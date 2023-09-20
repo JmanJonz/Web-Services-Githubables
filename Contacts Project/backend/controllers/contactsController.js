@@ -33,5 +33,25 @@
 
     }
 
+// replace contact
+    const replaceContact = async (req, res)=>{
+        try{
+            await contactsModel.findByIdAndUpdate(req.params.id, req.body);
+            res.status(200).json({"Contact has been updated": req.body});
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+    }
+
+// replace contact
+const deleteContact = async (req, res)=>{
+    try{
+        await contactsModel.findByIdAndDelete(req.params.id);
+        res.status(200).json({"Contact has been deleted for ever...": "Wamp Wamp"});
+    }catch(error){
+        res.status(400).json({error: error.message});
+    }
+}
+
 // exports
-    export {postContact, getContact, getContacts};
+    export {postContact, getContact, getContacts, replaceContact, deleteContact};

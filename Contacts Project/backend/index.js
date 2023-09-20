@@ -9,7 +9,7 @@
         // import swaggerJson from "./swagger.json" assert {type: "json"}; 
 
 // configurations
-    dotenv.config();
+    dotenv.config(); 
 
 // make express app
     const server = express();
