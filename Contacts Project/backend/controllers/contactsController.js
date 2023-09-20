@@ -12,6 +12,16 @@
         }
     }
 
+// get contact by id
+    const getContact = async (req, res)=>{
+        try{
+            const contact = await contactsModel.findById(req.params.id);
+            res.status(200).json(contact);
+        }catch(error){
+            res.status(400).json({error: error.message});
+        }
+    }
+
 // get all contacts
     const getContacts = async (req, res)=>{
         try{
@@ -23,7 +33,5 @@
 
     }
 
-// 
-
 // exports
-    export {postContact, getContacts};
+    export {postContact, getContact, getContacts};
