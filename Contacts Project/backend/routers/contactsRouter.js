@@ -1,14 +1,15 @@
-// post new contact
+// imports
     import express from "express";
-    import {getAllContacts, getContactById, postContact} from "../controllers/contactsController.js";
+    import { postContact, getContacts } from "../controllers/contactsController.js";
+
+// configurations
     const contactsRouter = express.Router();
+
+// post new contact
     contactsRouter.post("/", postContact);
 
 // get all contacts
-    contactsRouter.get("/", getAllContacts);
+    contactsRouter.get("/", getContacts);
 
-// get contact by document id
-    contactsRouter.get("/:id", getContactById);
-
-// code exports
+// exports
     export default contactsRouter;

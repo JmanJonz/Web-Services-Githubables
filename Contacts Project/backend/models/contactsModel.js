@@ -1,5 +1,7 @@
-// create a mongoose Schema object for contacts
+// imports
     import mongoose from "mongoose";
+
+// creating schema object for contacts using the .Schema() method
     const contactsSchema = new mongoose.Schema({
         firstName: {
             type: String,
@@ -23,9 +25,6 @@
         }
     });
 
-// using the mongoose.model() method to create a contactsModel object using the collection name and contactsSchema object
+// create and export model to be used in controllers
     const contactsModel = mongoose.model("contacts", contactsSchema);
-
-// exporting contactsModel object so it's methods and attributes can be used in a controller
     export default contactsModel;
-
