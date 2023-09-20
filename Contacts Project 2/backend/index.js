@@ -4,6 +4,8 @@
     import dotenv from "dotenv";
     import cors from "cors";
     import contactsRouter from "./routers/contactsRouter.js";
+    import swaggerUI from "swagger-ui-express";
+    import swaggerJson from "./swagger.json" assert {type: "json"};
 
 // configurations
     dotenv.config();
@@ -41,8 +43,12 @@
     // parsing req body from json to usable js object - next() is called in .json()...
         server.use(express.json()); 
 
+    // deploy swagger API documention to UI
+        server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJson));
+
 // mounting imported routes to use with server
     
     // contacts routes
         server.use("/", contactsRouter);
+
     
