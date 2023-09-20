@@ -6,7 +6,7 @@
     import mongoose from "mongoose";
     import dotenv from "dotenv";
     dotenv.config();
-    (async ()=>{
+    (async ()=>{ 
         try{
             await mongoose.connect(process.env.MONGODB_URI);
             const port = process.env.PORT || 3000;
@@ -27,9 +27,10 @@
             console.log("Request status code:", res.statusCode);
             next();
         });
-
-    // parses req.body from json to js object
-        server.use(express.json());
+    
+    // allow for cross orgin requests
+        import cors from "cors";
+        server.use(cors());
 
 // handle requests through imported routers
     import contactsRouter from "./routers/contactsRouter.js";

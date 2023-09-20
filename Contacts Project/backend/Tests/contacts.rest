@@ -1,7 +1,31 @@
-### get all contacts
-GET https://contacts-y9h1.onrender.com/
+# test API locally
 
-### get contact by id
-GET https://contacts-y9h1.onrender.com/65037f4057d9bcbcfcab6ea3
+    ###
+        POST http://http://localhost:3000/
+        Content-Type: application/json
+        
+        {
+            "firstName": "bob",
+            "lastName": "smith",
+            "email": "fake*@gamil.com",
+            "favoriteColor": "kdfjdkfj",
+            "birthday": "1/8/2000"
+        }
+
+    ###
+         GET http://localhost:3000/
+
+### test deployed API
+
+    ### post new contact
+        
+
+    ### get all contacts
+        GET https://contacts-y9h1.onrender.com/
+
+    ### get contact by id
+        GET https://contacts-y9h1.onrender.com/65037f4057d9bcbcfcab6ea3
+
+
 
 
