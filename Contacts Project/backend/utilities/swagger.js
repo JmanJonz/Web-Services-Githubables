@@ -1,6 +1,5 @@
 // imports
     import swaggerJSDoc from "swagger-jsdoc";
-    import swaggerJSDoc from "swagger-jsdoc";
 
 const swaggerOptions = {
     swaggerDefinition: {
@@ -8,5 +7,11 @@ const swaggerOptions = {
             title: "Contacts Project",
             version: "100000"
         }
-    }
-}
+    },
+    apis: ["../routers/contactsRouter.js"]
+};
+
+const swaggerDoc = swaggerJSDoc(swaggerOptions);
+
+// exports
+    export default swaggerDoc;

@@ -6,6 +6,12 @@
     const contactsRouter = express.Router();
 
 // post new contact
+    /**
+     * @swagger
+     * /:
+     * post:
+     * description: Post a new contact.
+     */
     contactsRouter.post("/", postContact);
  
 // get contact by id
