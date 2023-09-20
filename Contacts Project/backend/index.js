@@ -5,7 +5,7 @@
     import cors from "cors";
     import contactsRouter from "./routers/contactsRouter.js";
     import swaggerUI from "swagger-ui-express";
-    import swaggerJson from "./swagger.json" assert {type: "json"};
+    import swaggerJson from "./swagger.json" assert {type: "json"}; // not fully supported yet... but kinda works
 
 // configurations
     dotenv.config();
@@ -44,7 +44,14 @@
         server.use(express.json()); 
 
     // deploy swagger API documention to UI
-        server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJson));
+        (async ()=>{
+            try{
+                // const swaggerJSON = await fetch("./swagger.json");
+                server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJson));
+            }catch(error){
+                console.error(error);
+            }
+        })();
 
 // mounting imported routes to use with server
     
