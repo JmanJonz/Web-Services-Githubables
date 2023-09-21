@@ -22,5 +22,19 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+
+  "nodemonConfig" : {
+  
+  "ext" : "js",
+  
+  "ignore" :[
+  
+  "*.json"
+  
+  ],
+  
+  "delay" : "2"
+  
   }
 }

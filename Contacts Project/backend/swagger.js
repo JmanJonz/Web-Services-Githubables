@@ -1,5 +1,5 @@
 import swaggerAutogen from "swagger-autogen";
-
+swaggerAutogen();
 const doc = {
     info: {
         title: "Contacts API",
