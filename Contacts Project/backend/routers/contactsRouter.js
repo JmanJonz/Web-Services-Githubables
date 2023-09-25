@@ -1,6 +1,7 @@
 // imports
     import express from "express";
     import { postContact, getContact, getContacts, replaceContact, deleteContact} from "../controllers/contactsController.js";
+    import runSwaggerAutogen from "../swagger.js";
 
 // configurations
     const contactsRouter = express.Router();
@@ -19,6 +20,9 @@
 
 // delete contact by id
     contactsRouter.delete("/:id", deleteContact);
+
+// use imported swagger function to auto generate documentation
+    runSwaggerAutogen();
 
 // exports
     export default contactsRouter;

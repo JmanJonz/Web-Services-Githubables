@@ -1,5 +1,4 @@
 import swaggerAutogen from "swagger-autogen";
-swaggerAutogen();
 const doc = {
     info: {
         title: "Contacts API",
@@ -11,4 +10,9 @@ const doc = {
 const outputFile = "./swagger.json";
 const routes = ["./routers/contactsRouter.js"];
 
-swaggerAutogen(outputFile, routes, doc);
+// make function that calls swagger with params to export...
+    const runSwaggerAutogen = ()=>{
+        swaggerAutogen(outputFile, routes, doc);
+    };
+
+export default runSwaggerAutogen;
