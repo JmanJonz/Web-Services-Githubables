@@ -23,8 +23,10 @@
         }
     }
 
+
 // get all contacts
     const getContacts = async (req, res)=>{
+        
         try{
             const contacts = await contactsModel.find({}).sort({createdAt: -1}); 
             res.status(200).json(contacts);

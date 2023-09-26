@@ -5,8 +5,7 @@
     import cors from "cors";
     import contactsRouter from "./routers/contactsRouter.js";
     import swaggerUI from "swagger-ui-express";
-    // doesn't work on render so only uncomment when updating documentation locally & viewing documentation
-        import swaggerJson from "./swagger.json" assert {type: "json"}; 
+    import swaggerSpec from "./custom_modules/swaggerSpec.js";
 
 // configurations
     dotenv.config(); 
@@ -45,14 +44,8 @@
         server.use(express.json()); 
 
     // deploy swagger API documention to UI
-        (async ()=>{
-            try{
-                // const swaggerJSON = await fetch("./swagger.json");
-                server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJson));
-            }catch(error){
-                console.error(error);
-            }
-        })();
+        server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+        
 
 // mounting imported routes to use with server
     
