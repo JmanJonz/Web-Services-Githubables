@@ -5,9 +5,10 @@
     "description": "For Everything Contact Related",
     "version": "1.0.0"
   },
-  "host": "http://contacts-y9h1.onrender.com",
+  "host": "contacts-y9h1.onrender.com",
   "basePath": "/",
   "schemes": [
+    "https",
     "http"
   ],
   "paths": {
