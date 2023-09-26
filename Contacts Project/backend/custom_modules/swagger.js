@@ -5,7 +5,8 @@ const doc = {
       title: 'Contacts API',
       description: 'For Everything Contact Related'
     },
-    host: 'localhost:3000'
+    // You could add multiple hosts if you use openapi 3.0.0 with it...
+    host: 'https://contacts-y9h1.onrender.com'
   };
 
 const options = {
