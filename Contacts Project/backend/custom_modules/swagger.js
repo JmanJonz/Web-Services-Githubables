@@ -6,7 +6,8 @@ const doc = {
       description: 'For Everything Contact Related'
     },
     // You could add multiple hosts if you use openapi 3.0.0 with it...
-    host: 'http://contacts-y9h1.onrender.com'
+    host: 'https://contacts-y9h1.onrender.com',
+    schemes: ['http', "https"]
   };
 
 const options = {
