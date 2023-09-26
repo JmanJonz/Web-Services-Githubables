@@ -4,6 +4,10 @@
     import dotenv from "dotenv";
     import cors from "cors";
     import contactsRouter from "./routers/contactsRouter.js";
+    import updateSwaggerDocs from "./custom_modules/swagger.js";
+    import swaggerUI from "swagger-ui-express";
+    // Make sure that your deployment server is using the same version of node using env variables for this to work:
+        import swaggerJSON from "./custom_modules/swagger.json" assert {type: "json"};
 
 // configurations
     dotenv.config(); 
@@ -24,7 +28,7 @@
         }
     })();
 
-// middleware
+// global middleware called before every request
 
     // logging requests
         server.use((req, res, next)=>{ 
@@ -40,6 +44,10 @@
 
     // parsing req body from json to usable js object - next() is called in .json()...
         server.use(express.json()); 
+
+    // update swagger docs and create swagger ui documentation
+        updateSwaggerDocs();
+        server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 
 // mounting imported routes to use with server
     
