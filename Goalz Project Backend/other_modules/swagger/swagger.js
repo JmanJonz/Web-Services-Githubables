@@ -10,7 +10,7 @@
             description: 'Access To Goalz App DB'
           },
           // You could add multiple hosts if you use openapi 3.0.0 with it...
-          host: 'localhost:3000',
+          host: 'https://goalz-project.onrender.com',
           schemes: ["https", "http"]
     }
 
