@@ -10,19 +10,19 @@
     const goalzRouter = express.Router();
 
 // post new goal
-    goalzRouter.post("/", postGoal);
+    goalzRouter.post("/goalz", postGoal);
  
 // get goal by id
-    goalzRouter.get("/:id", getGoal);
+    goalzRouter.get("/goalz/:id", getGoal);
 
 // get all goalz
-    goalzRouter.get("/", getGoalz);
+    goalzRouter.get("/goalz", getGoalz);
 
 // find and replace goal
-    goalzRouter.put("/:id", replaceGoal);
+    goalzRouter.put("/goalz/:id", replaceGoal);
 
 // delete goal by id
-    goalzRouter.delete("/:id", deleteGoal);
+    goalzRouter.delete("/goalz/:id", deleteGoal);
 
 // exports
     export default goalzRouter;

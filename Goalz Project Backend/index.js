@@ -5,9 +5,12 @@
         import dotenv from "dotenv";
         import mongoose from "mongoose";
         import cors from "cors";
+        import swaggerUI from "swagger-ui-express";
 
     // custom modules
         import goalzRouter from "./routers/goalzRouter.js";
+        import updateSwaggerJSON from "./other_modules/swagger/swagger.js";
+        import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
 
 // create an express server object to use to create a server and routes
     const server = express();
@@ -43,10 +46,14 @@
     // parse the req body from JSON to usable JS object - again next is called inside this premade middleware
         server.use(express.json());
 
+    // update swaggerdocs and create swagger ui documentation
+        updateSwaggerJSON();
+        server.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
+
 // mount routers (modules that contain a group of related express server endpoints...)
     
     // user router
         
 
     // goalz router
-        server.use("/goalz", goalzRouter);
+        server.use("/", goalzRouter);
