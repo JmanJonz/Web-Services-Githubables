@@ -5,7 +5,7 @@
     "description": "Access To Goalz App DB",
     "version": "1.0.0"
   },
-  "host": "https://goalz-project.onrender.com",
+  "host": "goalz-project.onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
