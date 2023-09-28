@@ -28,13 +28,12 @@
         }
     })();
 
-// global middleware called before every request
+// global middleware called right after every request
 
     // logging requests
         server.use((req, res, next)=>{ 
             console.log("Request method:", req.method);
             console.log("Request URL:", req.url);
-            console.log("Request status code:", res.statusCode); 
             // run next to move onto next middleware!
                 next();
         });
