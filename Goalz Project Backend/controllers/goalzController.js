@@ -16,6 +16,7 @@
 // get goal by id
     const getGoal = async (req, res)=>{
         try{
+                    console.log("Routed to the correct place");
                     console.log(req.params.id);
             const goal = goalzModel.findById(req.params.id);
                     console.log(goal);
