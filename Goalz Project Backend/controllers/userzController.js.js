@@ -96,4 +96,4 @@
     };
 
 // exports
-    export {postuser, getuser, getuserz, replaceuser, deleteuser};
+    export {postUser, getUser, getUserz, replaceUser, deleteUser};
