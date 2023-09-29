@@ -9,7 +9,7 @@
 
     // custom modules
         import goalzRouter from "./routers/goalzRouter.js";
-        import userzRouter from "./routers/usersRouter.js";
+        import userzRouter from "./routers/userzRouter.js";
         import updateSwaggerJSON from "./other_modules/swagger/swagger.js";
         import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
 

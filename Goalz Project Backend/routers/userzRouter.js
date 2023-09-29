@@ -4,7 +4,7 @@
         import express from "express";
 
     // custom modules
-        import {postUser, getUser, getUserz, replaceUser, deleteUser} from "../controllers/userzController.js";
+        import {postUser, getUser, getUserz, replaceUser, deleteUser} from "../controllers/userzController.js.js";
         
 // create a express router object to add routes to
     const userzRouter = express.Router();
