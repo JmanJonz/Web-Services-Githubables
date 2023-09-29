@@ -2,6 +2,9 @@
     
     // 3rd party
         import swaggerAutogen from "swagger-autogen";
+    
+    // custom
+        import goalSchema from "./schemas/goalSchema.js";
 
 // (not required) creating some configuration options for swaggerAutogen module
     const options = {
@@ -16,8 +19,14 @@
             description: 'Access To Goalz App DB'
           },
           // You could add multiple hosts if you use openapi 3.0.0 with it...
-          host: 'goalz-project.onrender.com',
-          schemes: ["https", "http"]
+        //   host: 'goalz-project.onrender.com',
+          host: '',
+          schemes: ["https", "http"],
+          components: {
+            schemas: {
+                goalSchema: goalSchema
+            }
+          }
     }
 
 // storing the location of the file where all endpoints exist (usually just all your router files...)

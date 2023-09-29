@@ -2,20 +2,25 @@
 
     // custom
         import goalzModel from "../models/goalzModel.js";
-        import goalSchema from "../other_modules/schemas/goalSchema.js";
 
 // post new goal
     const postGoal = async (req, res)=>{
         /**
         * #swagger.tags = ["Goalz"]
         * #swagger.description = "Post a new goal"
-          #swagger.parameters["body"] = {
-          in: "body",
-          description: "Data Needed For New Goal",
-          "schema": @var {object} goalSchema
-          }
+        * #swagger.requestBody = {
+            required: true,
+            content: {
+                "application/json": {
+                    schema: {
+                        $ref: "#/components/schemas/goalSchema"
+                    }  
+                }
+            }
+        } 
         */
         try{
+            console.log(req.body);
             const goalAdded = await goalzModel.create(req.body);
             res.status(200).json({"Goal Added": goalAdded});
         }catch(error){
@@ -56,9 +61,19 @@
         /**
         * #swagger.tags = ["Goalz"]
         * #swagger.description = "Replace a goal by id"
-
+        * #swagger.requestBody = {
+            required: true,
+            content: {
+                "application/json": {
+                    schema: {
+                        $ref: "#/components/schemas/goalSchema"
+                    }  
+                }
+            }
+        } 
         */
         try{
+            console.log(req.body);
             await goalzModel.findByIdAndUpdate(req.params.id, req.body);
             res.status(200).json({"Goal has been updated": req.body});
         }catch(error){

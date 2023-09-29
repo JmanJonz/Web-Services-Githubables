@@ -5,14 +5,7 @@
     "description": "Access To Goalz App DB",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "https://goalz-project.onrender.com/"
-    },
-    {
-      "url": "http://goalz-project.onrender.com/"
-    }
-  ],
+  "host": "",
   "paths": {
     "/goalz": {
       "post": {
@@ -26,6 +19,16 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/goalSchema"
+              }
+            }
           }
         }
       },
@@ -91,6 +94,16 @@
           "400": {
             "description": "Bad Request"
           }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/goalSchema"
+              }
+            }
+          }
         }
       },
       "delete": {
@@ -114,6 +127,43 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "goalSchema": {
+        "type": "object",
+        "properties": {
+          "goalTitle": {
+            "type": "string",
+            "example": "Stop Picking Nose"
+          },
+          "goalOwner": {
+            "type": "string",
+            "example": "Ammon Jones"
+          },
+          "startDate": {
+            "type": "string",
+            "example": "2023/9/30"
+          },
+          "completeByDate": {
+            "type": "string",
+            "example": "2024/7/30"
+          },
+          "belongsToValue": {
+            "type": "string",
+            "example": "family"
+          },
+          "urgentImportantRating": {
+            "type": "number",
+            "example": 7
+          },
+          "goalCompleted": {
+            "type": "boolean",
+            "example": false
           }
         }
       }
