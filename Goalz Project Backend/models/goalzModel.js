@@ -13,6 +13,10 @@
             type: String,
             required: true
         },
+        startDate: {
+            type: Date,
+            required: false
+        },
         completeByDate: {
             type: Date,
             required: true
@@ -20,6 +24,11 @@
         belongsToValue: {
             type: String,
             required: true
+        },
+        urgentImportantRating: {
+            type: Number,
+            min: 1,
+            max: 10
         },
         goalCompleted: {
             type: Boolean,
