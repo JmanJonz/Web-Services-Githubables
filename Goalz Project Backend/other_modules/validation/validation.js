@@ -8,7 +8,7 @@
     // for user inputs 
         const newUserValidation = [
             check('email', 'Please include a valid email').isEmail().normalizeEmail({ gmail_remove_dots: true }),
-            check('password', 'Password must be 6 or more characters').isLength({ min: 7 }),        
+            check('password', 'Password must be 7 or more characters').isLength({ min: 7 }),        
             check('firstName', 'Name is requied').not().isEmpty(),
             check('lastName', 'Name is requied').not().isEmpty(),
         ];

@@ -51,6 +51,17 @@
         updateSwaggerJSON();
         server.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 
+    // error handling function for validation? I don't know how errors get sent back here...
+        // Handling Errors
+            server.use((err, req, res, next) => {
+                // console.log(err);
+                err.statusCode = err.statusCode || 500;
+                err.message = err.message || "Internal Server Error";
+                res.status(err.statusCode).json({
+                message: err.message,
+                });
+            });
+
 // mount routers (modules that contain a group of related express server endpoints...)
     
     // user router
