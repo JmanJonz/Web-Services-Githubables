@@ -1,20 +1,25 @@
 {
-  "swagger": "2.0",
+  "openapi": "3.0.0",
   "info": {
     "title": "Goalz App API",
     "description": "Access To Goalz App DB",
     "version": "1.0.0"
   },
-  "host": "goalz-project.onrender.com",
-  "basePath": "/",
-  "schemes": [
-    "https",
-    "http"
+  "servers": [
+    {
+      "url": "https://goalz-project.onrender.com/"
+    },
+    {
+      "url": "http://goalz-project.onrender.com/"
+    }
   ],
   "paths": {
     "/goalz": {
       "post": {
-        "description": "",
+        "tags": [
+          "Goalz"
+        ],
+        "description": "Post a new goal",
         "responses": {
           "200": {
             "description": "OK"
@@ -25,7 +30,10 @@
         }
       },
       "get": {
-        "description": "",
+        "tags": [
+          "Goalz"
+        ],
+        "description": "Get all goalz",
         "responses": {
           "200": {
             "description": "OK"
@@ -38,13 +46,18 @@
     },
     "/goalz/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Goalz"
+        ],
+        "description": "Get goal by id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -57,13 +70,18 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Goalz"
+        ],
+        "description": "Replace a goal by id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -76,13 +94,18 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Goalz"
+        ],
+        "description": "Delete a goal by id",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {

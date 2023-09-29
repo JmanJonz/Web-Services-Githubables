@@ -3,6 +3,12 @@
     // 3rd party
         import swaggerAutogen from "swagger-autogen";
 
+// (not required) creating some configuration options for swaggerAutogen module
+    const options = {
+        // using this so that I can use variables in js docs... using imported schema...
+            openapi: "3.0.0"
+    };
+
 // set up a doc object to be used in swagger documentation
     const doc = {
         info: {
@@ -13,11 +19,6 @@
           host: 'goalz-project.onrender.com',
           schemes: ["https", "http"]
     }
-
-// you could setup some options here for the whole documentation but I take care of it in the controller functions
-    // const options = {
-    //     autoBody: true
-    // }
 
 // storing the location of the file where all endpoints exist (usually just all your router files...)
 // since you are importing this into index.js all routes should be from there!
@@ -32,7 +33,7 @@
 // you can also not export this function and just add runing this file to your start scripts...
     const updateSwaggerJSON = ()=>{
         // Looks like swaggerAutogen returns a function and then you are calling the return function with the following parameters...
-            swaggerAutogen()(outputFile, routes, doc);
+            swaggerAutogen(options)(outputFile, routes, doc);
     }
 
 // export this function and call it in index.js so that everytime the server restarts it will auto update the documentation
