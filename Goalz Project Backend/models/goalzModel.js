@@ -9,10 +9,6 @@
             type: String,
             required: true
         },
-        goalOwner: {
-            type: String,
-            required: true
-        },
         startDate: {
             type: Date,
             required: false
@@ -34,6 +30,10 @@
             type: Boolean,
             required: true,
             default: false
+        },
+        userEmail: {
+            type: String,
+            required: true
         }
     });
 
