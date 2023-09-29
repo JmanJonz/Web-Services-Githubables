@@ -137,6 +137,130 @@
           }
         }
       }
+    },
+    "/Userz": {
+      "post": {
+        "tags": [
+          "Userz"
+        ],
+        "description": "Post a new user",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/userSchema"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Userz"
+        ],
+        "description": "Get all userz",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/Userz/{id}": {
+      "get": {
+        "tags": [
+          "Userz"
+        ],
+        "description": "Get user by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Userz"
+        ],
+        "description": "Replace a user by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/userSchema"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Userz"
+        ],
+        "description": "Delete a user by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -147,10 +271,6 @@
           "goalTitle": {
             "type": "string",
             "example": "Stop Picking Nose"
-          },
-          "goalOwner": {
-            "type": "string",
-            "example": "Ammon Jones"
           },
           "startDate": {
             "type": "string",
@@ -171,6 +291,27 @@
           "goalCompleted": {
             "type": "boolean",
             "example": false
+          },
+          "userEmail": {
+            "type": "string",
+            "example": "bogus@dumbmail.com"
+          }
+        }
+      },
+      "userSchema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "bogus@dumbmail.com"
+          },
+          "firstName": {
+            "type": "string",
+            "example": "Howard"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Chowski"
           }
         }
       }
