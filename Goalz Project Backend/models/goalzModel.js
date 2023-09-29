@@ -7,7 +7,8 @@
     const goalzSchema = new mongoose.Schema({
         goalTitle: {
             type: String,
-            required: true
+            required: true,
+            unique: true
         },
         startDate: {
             type: Date,
