@@ -305,6 +305,10 @@
             "type": "string",
             "example": "bogus@dumbmail.com"
           },
+          "password": {
+            "type": "string",
+            "example": "1234567"
+          },
           "firstName": {
             "type": "string",
             "example": "Howard"
