@@ -5,12 +5,13 @@
 
     // custom modules
         import {postUser, getUser, getUserz, replaceUser, deleteUser} from "../controllers/userzController.js.js";
+        import { newUserValidation } from "../other_modules/validation/validation.js";
         
 // create a express router object to add routes to
     const userzRouter = express.Router();
 
 // post new User
-    userzRouter.post("/Userz", postUser);
+    userzRouter.post("/Userz", newUserValidation, postUser);
  
 // get User by id
     userzRouter.get("/Userz/:id", getUser);
