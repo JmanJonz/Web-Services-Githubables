@@ -12,7 +12,7 @@
           #swagger.parameters["body"] = {
           in: "body",
           description: "Data Needed For New Goal",
-          "schema": goalSchema
+          "schema": @var {object} goalSchema
           }
         */
         try{
