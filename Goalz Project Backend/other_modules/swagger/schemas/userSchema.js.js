@@ -1,6 +1,7 @@
 // create user schema object to be used in mongoose mondel and swagger documentation
     const userSchema = {
         email: "bogus@dumbmail.com",
+        password: "1234",
         firstName: "Howard",
         lastName: "Chowski"
     }
