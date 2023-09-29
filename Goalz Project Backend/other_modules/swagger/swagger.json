@@ -5,7 +5,14 @@
     "description": "Access To Goalz App DB",
     "version": "1.0.0"
   },
-  "host": "",
+  "servers": [
+    {
+      "url": "https://goalz-project.onrender.com/"
+    },
+    {
+      "url": "http://goalz-project.onrender.com/"
+    }
+  ],
   "paths": {
     "/goalz": {
       "post": {

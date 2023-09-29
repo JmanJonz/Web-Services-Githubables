@@ -20,7 +20,7 @@
           },
           // You could add multiple hosts if you use openapi 3.0.0 with it...
         //   host: 'goalz-project.onrender.com',
-          host: '',
+          host: 'goalz-project.onrender.com',
           schemes: ["https", "http"],
           components: {
             schemas: {
