@@ -5,5 +5,5 @@
         firstName: "Howard",
         lastName: "Chowski"
     }
-// export userSchema to be used and in swagger docs
+// export userSchema to be used and in swagger docs...
     export default userSchema;
