@@ -29,7 +29,7 @@
     };
 
 // get user by id
-    const getuser = async (req, res)=>{
+    const getUser = async (req, res)=>{
         /**
         * #swagger.tags = ["Userz"]
         * #swagger.description = "Get user by id"
@@ -43,7 +43,7 @@
     };
 
 // get all users
-    const getuserz = async (req, res)=>{
+    const getUserz = async (req, res)=>{
         /**
         * #swagger.tags = ["Userz"]
         * #swagger.description = "Get all userz"
@@ -57,7 +57,7 @@
     };
 
 // replace user
-    const replaceuser = async (req, res)=>{
+    const replaceUser = async (req, res)=>{
         /**
         * #swagger.tags = ["Userz"]
         * #swagger.description = "Replace a user by id"
@@ -82,7 +82,7 @@
     }
 
 // delete user
-    const deleteuser = async (req, res)=>{
+    const deleteUser = async (req, res)=>{
         /**
         * #swagger.tags = ["Userz"]
         * #swagger.description = "Delete a user by id"
