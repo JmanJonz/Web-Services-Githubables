@@ -5,6 +5,7 @@
     
     // custom
         import goalSchema from "./schemas/goalSchema.js";
+        import userSchema from "./schemas/userSchema.js.js"
 
 // (not required) creating some configuration options for swaggerAutogen module
     const options = {
@@ -24,7 +25,8 @@
           schemes: ["https", "http"],
           components: {
             schemas: {
-                goalSchema: goalSchema
+                goalSchema: goalSchema,
+                userSchema: userSchema
             }
           }
     }
