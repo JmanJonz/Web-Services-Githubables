@@ -5,7 +5,7 @@
     
     // custom
         import goalSchema from "./schemas/goalSchema.js";
-        import userSchema from "./schemas/userSchema.js"
+        import userSchema from "./schemas/userSchema.js";
 
 // (not required) creating some configuration options for swaggerAutogen module
     const options = {
