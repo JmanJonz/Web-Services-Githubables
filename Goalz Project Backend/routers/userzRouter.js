@@ -5,7 +5,7 @@
 
     // custom modules
         import {postUser, getUser, getUserz, replaceUser, deleteUser} from "../controllers/userzController.js";
-        import {userGetDeleteV, userPostV} from "../other_modules/validation/userValidation.js";
+        import {userIdValidation, userInputValidation} from "../other_modules/validation/userValidation.js";
         import validationErrorSender from "../other_modules/validation/validationErrorSender.js";
 
         
@@ -13,19 +13,19 @@
     const userzRouter = express.Router();
 
 // post new User
-    userzRouter.post("/Userz",userPostV, validationErrorSender, postUser);
+    userzRouter.post("/Userz",userInputValidation, validationErrorSender, postUser);
  
 // get User by id
-    userzRouter.get("/Userz/:id",userGetDeleteV, validationErrorSender, getUser);
+    userzRouter.get("/Userz/:id",userIdValidation, validationErrorSender, getUser);
 
 // get all Userz
     userzRouter.get("/Userz", getUserz);
 
 // find and replace User
-    userzRouter.put("/Userz/:id",userPostV, validationErrorSender, replaceUser);
+    userzRouter.put("/Userz/:id",userIdValidation, userInputValidation, validationErrorSender, replaceUser);
 
 // delete User by id
-    userzRouter.delete("/Userz/:id",userGetDeleteV, validationErrorSender, deleteUser);
+    userzRouter.delete("/Userz/:id",userIdValidation, validationErrorSender, deleteUser);
 
 // exports
     export default userzRouter;
