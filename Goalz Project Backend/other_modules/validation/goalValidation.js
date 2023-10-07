@@ -15,7 +15,7 @@
                 body("goalTitle").notEmpty().withMessage("Cannot be empty"),
                 body("completeByDate").notEmpty().withMessage("Cannot be empty"),
                 body("belongsToValue").notEmpty().withMessage("Cannot be empty"),
-                body("urgentImportantRating").notEmpty().isInt().withMessage("Cannot be empty"),
+                body("urgentImportantRating").notEmpty().isInt().withMessage("Must Be int 1-10"),
                 body("goalCompleted").notEmpty().withMessage("Cannot be empty"),
                 body("userEmail").isEmail().normalizeEmail({ gmail_remove_dots: true }).withMessage("Must enter a valid email")
             ];

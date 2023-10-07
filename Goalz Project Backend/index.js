@@ -12,6 +12,7 @@
         import userzRouter from "./routers/userzRouter.js";
         import updateSwaggerJSON from "./other_modules/swagger/swagger.js";
         import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
+        import authRouter from "./routers/authRouter.js";
 
 // create an express server object to use to create a server and routes
     const server = express();
@@ -58,3 +59,6 @@
 
     // goalz router
         server.use("/", goalzRouter);
+
+    // authentication router
+        server.use("/auth", authRouter);
