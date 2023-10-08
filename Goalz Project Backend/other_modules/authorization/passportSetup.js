@@ -24,6 +24,12 @@
           // this is where we will create a new user / authorize user if user already added to db
             function(request, accessToken, refreshToken, profile, done){
                                                                                 console.log(profile)
+                new userModel({
+                    username: profile.displayName,
+                    googleId: profile.id
+                }).save().then((newUser)=>{
+                    console.log(`New user created: ${newUser}`);
+                })
             }
         ));
     };

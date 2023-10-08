@@ -4,7 +4,7 @@
 // create user schema
     const userSchema = new mongoose.Schema({
         username: String,
-        googleid: String
+        googleId: String
     })
 
 // create userModel
