@@ -272,6 +272,16 @@
         }
       }
     },
+    "/auth/google/redirect": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auth/logout": {
       "get": {
         "description": "",
