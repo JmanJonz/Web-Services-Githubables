@@ -4,7 +4,10 @@
 // create user schema
     const userSchema = new mongoose.Schema({
         username: String,
-        googleId: String
+        googleId: {
+            type: String,
+            unique: true
+        }
     })
 
 // create userModel
