@@ -11,6 +11,20 @@ export default passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_REDIRECT_URL
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    // check if user already exists in db
+        userModel.findOne({googleId: profile.id}).then((existingUser)=>{
+            if(existingUser){
+                // already have user
+                                        console.log("Existing user" + existingUser);
+            }else{
+                // if not create user in db
+                    new userModel({
+                        username: profile.displayName,
+                        googleId: profile.id
+                    }).save().then((newUser)=>{
+                                            console.log("New user created:" + newUser);
+                    })            
+            }
+        })
   }
 ));
