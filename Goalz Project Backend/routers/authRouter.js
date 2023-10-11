@@ -1,31 +1,18 @@
-// 3p imports
+// imports 
     import express from "express";
     import passport from "passport";
-    import runPassportSetupFunction from "../other_modules/authorization/passportSetup.js";
+    import passportSetup from "../other_modules/passport/passportSetup.js";
 
-// custom imports
-    import { executeLogout } from "../controllers/authController.js";
-
-// execute passport setup so it can be used
-    runPassportSetupFunction();
-
-// create authentication router object
+// make auth router
     const authRouter = express.Router();
 
-// login / create account route
-    authRouter.get("/login/google", passport.authenticate("google", {
-        scope: ["profile", "email"]
-    }));
+// route for creating an account / logging in with google
+    authRouter.get("/create-or-login/google", passport.authenticate("google", {scope: ["profile"]}));
 
-// handle the google redirect after verified 
-// this time passport is using query param code to get info from google and then firing 
-// it's callback function
-    authRouter.get("/google/redirect", passport.authenticate("google"), (req, res)=>{
-        res.send("You have been verified by google and are now back at the app");
+// googles redirect url that it sends a code to use in query params to access user info
+    authRouter.get("/google/redirect", passport.authenticate("google"),(req, res)=>{
+        res.send("Google Redirected you here with code");
     })
 
-// logout 
-    authRouter.get("/logout", executeLogout);
-
-// export router to be used in index.js
+// export auth router to be used in index.js
     export default authRouter;

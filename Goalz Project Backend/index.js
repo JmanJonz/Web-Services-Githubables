@@ -54,11 +54,11 @@
 
 // mount routers (modules that contain a group of related express server endpoints...)
     
+    // authentication router
+        server.use("/auth", authRouter);
+
     // user router
         server.use("/", userzRouter);
 
     // goalz router
         server.use("/", goalzRouter);
-
-    // authentication router
-        server.use("/auth", authRouter);
