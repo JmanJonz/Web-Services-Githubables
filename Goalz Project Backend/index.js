@@ -52,7 +52,7 @@
 
     // update swaggerdocs and create swagger ui documentation
         updateSwaggerJSON();
-        server.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
+        server.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
 
     // check if the user making the request already has a session
         const session = expressSession({

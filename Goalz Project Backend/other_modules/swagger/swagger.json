@@ -16,6 +16,9 @@
   "paths": {
     "/auth/create-or-login/google": {
       "get": {
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -26,10 +29,39 @@
     },
     "/auth/google/redirect": {
       "get": {
+        "tags": [
+          "Authorization"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/profile": {
+      "get": {
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "tags": [
+          "Authorization"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
           }
         }
       }
