@@ -6,6 +6,8 @@
         import mongoose from "mongoose";
         import cors from "cors";
         import swaggerUI from "swagger-ui-express";
+        import expressSession from "express-session";
+        import passport from "passport";
 
     // custom modules
         import goalzRouter from "./routers/goalzRouter.js";
@@ -51,6 +53,19 @@
     // update swaggerdocs and create swagger ui documentation
         updateSwaggerJSON();
         server.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
+
+    // check if the user making the request already has a session
+        const session = expressSession({
+            secret: process.env.CK_KEY,
+            resave: false,
+            saveUninitialized: false,
+        });
+
+    // initialize passport
+        server.use(session);
+        server.use(passport.initialize());
+        server.use(passport.session());
+
 
 // mount routers (modules that contain a group of related express server endpoints...)
     

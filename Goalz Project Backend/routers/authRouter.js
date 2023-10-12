@@ -1,7 +1,8 @@
 // imports 
     import express from "express";
     import passport from "passport";
-    import passportSetup from "../other_modules/passport/passportSetup.js";
+    import runPassportSetup from "../other_modules/passport/passportSetup.js";
+        runPassportSetup();
 
 // make auth router
     const authRouter = express.Router();
@@ -11,7 +12,7 @@
 
 // googles redirect url that it sends a code to use in query params to access user info
     authRouter.get("/google/redirect", passport.authenticate("google"),(req, res)=>{
-        res.send("Google Redirected you here with code");
+        res.send(req.user);
     })
 
 // export auth router to be used in index.js
