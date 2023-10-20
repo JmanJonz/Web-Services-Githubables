@@ -6,6 +6,8 @@
     import swaggerUI from "swagger-ui-express";
     import expressSession from "express-session";
     import passport from "passport";
+    import dotenv from "dotenv";
+    import mongoose from "mongoose";
 
 // custom modules
     import goalzRouter from "./routers/goalzRouter.js";
@@ -15,7 +17,19 @@
     import authRouter from "./routers/authRouter.js";
 
 // create an express app object to use to create a app and routes
-const app = express();
+    const app = express();
+
+// connect to the db but don't start app yet so that
+// it can be passed and ran on any port anywhere such as tests...
+
+    dotenv.config();
+
+    try{
+        await mongoose.connect(process.env.MONGODB_URI);
+            console.log("Connected To DB");
+    }catch(error){
+        console.error("Error connected to DB", error);
+    }
 
 // allow cross orgin request from anywhere / specific urls - next() is called within the cors function...
     app.use(cors());
