@@ -12,6 +12,11 @@
 // create a express router object to add routes to
     const goalzRouter = express.Router();
 
+                    // for testing testing
+                        goalzRouter.get("/goalz/yes", async(req, res)=>{
+                            res.status(200).send("yes");
+                        })
+
 // post new goal
     goalzRouter.post("/goalz", isAuthorized, goalInputValidation, validationErrorSender, postGoal);
  

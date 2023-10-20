@@ -11,7 +11,7 @@
     import goalzRouter from "./routers/goalzRouter.js";
     import userzRouter from "./routers/userzRouter.js";
     import updateSwaggerJSON from "./other_modules/swagger/swagger.js";
-    import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
+    // import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
     import authRouter from "./routers/authRouter.js";
 
 // create an express app object to use to create a app and routes
@@ -32,8 +32,11 @@ const app = express();
     app.use(express.json());
 
 // update swaggerdocs and create swagger ui documentation
-    updateSwaggerJSON();
-    app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));
+// I wrote false in here becasue at the moment I am not importing swaggerJSON...
+    if(false){
+        updateSwaggerJSON();
+        app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));    
+    }
 
 // check if the user making the request already has a session
     const session = expressSession({
