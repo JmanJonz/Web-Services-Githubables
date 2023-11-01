@@ -13,7 +13,7 @@
     import goalzRouter from "./routers/goalzRouter.js";
     import userzRouter from "./routers/userzRouter.js";
     import updateSwaggerJSON from "./other_modules/swagger/swagger.js";
-    // import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
+    import swaggerJSON from "./other_modules/swagger/swagger.json" assert {"type": "json"};
     import authRouter from "./routers/authRouter.js";
 
 // create an express app object to use to create a app and routes
@@ -47,7 +47,7 @@
 
 // update swaggerdocs and create swagger ui documentation
 // I wrote false in here becasue at the moment I am not importing swaggerJSON...
-    if(false){
+    if(true){
         updateSwaggerJSON();
         app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSON));    
     }
